@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en">
+  <meta name="theme-color" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+  <title> Game</title>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Press+Start+2P'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Carter+One');
+
+
+
+    /*NOIZE for background*/
+    .game-button {
+      position: relative;
+      top: 0;
+      cursor: pointer;
+      text-decoration: none !important;
+      outline: none !important;
+      font-family: 'Carter One', sans-serif;
+      /* font-size: 18px;
+      line-height: 1.5em;
+      letter-spacing: .1em; */
+      text-shadow: 2px 2px 1px #0066a2, -2px 2px 1px #0066a2, 2px -2px 1px #0066a2, -2px -2px 1px #0066a2, 0px 2px 1px #0066a2, 0px -2px 1px #0066a2, 0px 4px 1px #004a87, 2px 4px 1px #004a87, -2px 4px 1px #004a87;
+      border: none;
+      margin: 15px 4px 30px;
+      background: repeating-linear-gradient(45deg, #3ebbf7, #3ebbf7 5px, #45b1f4 5px, #45b1f4 10px);
+      border-bottom: 3px solid rgba(16, 91, 146, 0.5);
+      border-top: 3px solid rgba(255, 255, 255, .3);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 0px 18px 0px;
+      box-shadow: 0 6px 0 #266b91, 0 8px 1px 1px rgba(0, 0, 0, .3), 0 10px 0 5px #12517d, 0 12px 0 5px #1a6b9a, 0 15px 0 5px #0c405e, 0 15px 1px 6px rgba(0, 0, 0, .3);
+    }
+
+    .game-button:hover {
+      top: 2px;
+      box-shadow: 0 4px 0 #266b91, 0 6px 1px 1px rgba(0, 0, 0, .3), 0 8px 0 5px #12517d, 0 10px 0 5px #1a6b9a, 0 13px 0 5px #0c405e, 0 13px 1px 6px rgba(0, 0, 0, .3);
+    }
+
+    .game-button::before {
+      content: '';
+      height: 10%;
+      position: absolute;
+      width: 40%;
+      background: #fff;
+      right: 13%;
+      top: -3%;
+      border-radius: 99px;
+    }
+
+    .game-button::after {
+      content: '';
+      height: 10%;
+      position: absolute;
+      width: 5%;
+      background: #fff;
+      right: 5%;
+      top: -3%;
+      border-radius: 99px;
+    }
+
+    .game-button.orange {
+      background: repeating-linear-gradient(45deg, #ffc800, #ffc800 5px, #ffc200 5px, #ffc200 10px);
+      box-shadow: 0 6px 0 #b76113, 0 8px 1px 1px rgba(0, 0, 0, .3), 0 10px 0 5px #75421f, 0 12px 0 5px #8a542b, 0 15px 0 5px #593116, 0 15px 1px 6px rgba(0, 0, 0, .3);
+      border-bottom: 3px solid rgba(205, 102, 0, 0.5);
+      text-shadow: 2px 2px 1px #e78700, -2px 2px 1px #e78700, 2px -2px 1px #e78700, -2px -2px 1px #e78700, 0px 2px 1px #e78700, 0px -2px 1px #e78700, 0px 4px 1px #c96100, 2px 4px 1px #c96100, -2px 4px 1px #c96100;
+    }
+
+    .game-button.orange:hover {
+      top: 2px;
+      box-shadow: 0 4px 0 #b76113, 0 6px 1px 1px rgba(0, 0, 0, .3), 0 8px 0 5px #75421f, 0 10px 0 5px #8a542b, 0 13px 0 5px #593116, 0 13px 1px 6px rgba(0, 0, 0, .3);
+    }
+
+    .game-button.red {
+      background: repeating-linear-gradient(45deg, #ff4f4c, #ff4f4c 5px, #ff4643 5px, #ff4643 10px);
+      box-shadow: 0 6px 0 #ae2725, 0 8px 1px 1px rgba(0, 0, 0, .3), 0 10px 0 5px #831614, 0 12px 0 5px #a33634, 0 15px 0 5px #631716, 0 15px 1px 6px rgba(0, 0, 0, .3);
+      border-bottom: 3px solid rgba(160, 25, 23, 0.5);
+      text-shadow: 2px 2px 1px #d72d21, -2px 2px 1px #d72d21, 2px -2px 1px #d72d21, -2px -2px 1px #d72d21, 0px 2px 1px #d72d21, 0px -2px 1px #d72d21, 0px 4px 1px #930704, 2px 4px 1px #930704, -2px 4px 1px #930704;
+    }
+
+    .game-button.red:hover {
+      top: 2px;
+      box-shadow: 0 4px 0 #ae2725, 0 6px 1px 1px rgba(0, 0, 0, .3), 0 8px 0 5px #831614, 0 10px 0 5px #a33634, 0 13px 0 5px #631716, 0 13px 1px 6px rgba(0, 0, 0, .3);
+    }
+
+    .game-button.green {
+      background: repeating-linear-gradient(45deg, #54d440, #54d440 5px, #52cc3f 5px, #52cc3f 10px);
+      box-shadow: 0 6px 0 #348628, 0 8px 1px 1px rgba(0, 0, 0, .3), 0 10px 0 5px #2a6d20, 0 12px 0 5px #39822e, 0 15px 0 5px #1d4c16, 0 15px 1px 6px rgba(0, 0, 0, .3);
+      border-bottom: 3px solid rgba(40, 117, 29, 0.5);
+      text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
+    }
+
+    .game-button.green:hover {
+      top: 2px;
+      box-shadow: 0 4px 0 #348628, 0 6px 1px 1px rgba(0, 0, 0, .3), 0 8px 0 5px #2a6d20, 0 10px 0 5px #39822e, 0 13px 0 5px #1d4c16, 0 13px 1px 6px rgba(0, 0, 0, .3);
+    }
+
+    .myscore {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: fit-content;
+
+    }
+  </style>
+
+  <style>
+    #start_music {
+      /* background-image: url('window.png'); */
+      /* background-size: contain; */
+      background-position: center;
+      height: 400px;
+      width: 100%;
+      background-repeat: no-repeat;
+
+    }
+
+    #start_music p {
+      color: #fff;
+      margin: 10px 30px;
+      font-size: 16px;
+
+
+    }
+
+    #start_music h4 {
+      color: #fff;
+      margin: 10px 30px;
+    }
+
+    .closes {
+
+      float: right !important;
+    }
+
+    .start_musicstart_music p {
+      border: 1px solid black;
+      background-color: black;
+      padding: 14px !important;
+      margin: 20px !important;
+      border-radius: 12px !important;
+    }
+
+    .actives {
+      background-color: #348628 !important;
+    }
+
+    .gifstair {
+      position: static;
+    }
+  </style>
+  <style>
+    .video-dialog .modal-content img {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: contain;
+      object-fit: contain;
+    }
+
+    .fif {
+      background-image: url('./assets/climbing-stairs_1.gif');
+      background-repeat: no-repeat;
+      height: 581px;
+      width: 80px;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      right: 0;
+      margin: 0 auto;
+
+      text-align: center;
+      justify-content: center;
+      background-position: center;
+    }
+  </style>
+
+</head>
+
+<body id="test" onclick="openFullscreens();">
+
+
+  <div class="myscore">
+    <button class="game-button" data-toggle="modal" data-target="#myModal2">Menu</button>
+    <button class="game-button orange">Point: <span>50</span> </button>
+
+    <a href="leaderboard.html" class="href">
+      <button class="game-button red">Leaderboard</button>
+
+
+    </a>
+
+
+
+
+
+  </div>
+
+
+
+  <div id="rotation-warning">
+    <i class="material-icons">ohh !!!</i>
+    <p>Please Check your Phone</p>
+  </div>
+
+
+
+
+
+  <!-- modal -->
+
+
+
+  <!-- Modal -->
+  <!-- <div id="myModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static"> -->
+
+
+
+  <div id="myModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog video-dialog">
+
+      <div class="modal-content">
+
+        <div class="modal-body" id="start_music">
+          <!-- <h4>Instructions:
+          </h4>
+          <p>Target Achievement: The user must successfully accomplish the predefined targets mentioned in the game instructions.
+          </p>
+          <p>Points and Progression: Upon completing the targets, the user will earn points that will contribute to their progress on a ladder system.
+          </p>
+          <p>Climbing the Ladder: The ladder consists of fixed positions where achievements are located. To attain the prizes, the user needs to climb the ladder by consistently completing the targets in order
+          </p> -->
+          <img src="assets/Instructions.png" alt="" class="src">
+
+          <a href="./game.html" class="href">
+            <button type="button" class="game-button red closes">
+              <span aria-hidden="true">Next</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="scene">
+    <div class="gifstair">
+      <div class="fif">
+        <div class="st">
+          <div class="star">
+          </div>
+          <div class="star2">
+          </div>
+          <div class="star3">
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- <h1>SUPER MARIO</h1> -->
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+
+
+
+
+    <div class="floor">
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <script src="./assets/script.js"></script>
+
+
+  <script type="text/javascript">
+
+    $('.gifstair').hide();
+
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+      }, 0);
+    });
+    $(window).on('load', function () {
+      $('#myModal').modal('show');
+      //$('#myModal3').modal('show');
+      $('.gifstair').show();
+
+      $('#myModal3').show(2000, function () {
+        setTimeout(function () {
+          $('#myModal3').modal('show');
+          $('.star').hide()
+
+        }, 2000);
+      });
+
+      // $('#winner').modal('show');
+
+
+    });
+
+    $('#start_music').click(function () {
+      mario_bgd1.play();
+      mario_bgd2.play();
+      mario_bgd3.play();
+      mario_bgd1.loop = true;
+    })
+  </script>
+
+
+  <script>
+    var elem = document.getElementById("test");
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>

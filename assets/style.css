@@ -1,0 +1,675 @@
+/* Helpers */
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  /* animation: 50s para infinite linear; */
+}
+ .float5{
+  display: none;
+}
+
+.scene {
+  display: none;
+} 
+
+#rotation-warning {
+  background-color: black !important;
+  height: 100vh;
+  width: 100vw;
+  color: #fff;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .float5 {
+    display: block;
+  }
+
+  .scene {
+    display: block;
+  }
+
+  #rotation-warning {
+    display: none !important;
+  }
+
+
+}
+
+@keyframes para {
+  100% {
+    background-position:
+      -5000px 20%,
+      -800px 95%,
+      500px 50%,
+      1000px 100%,
+      400px 0;
+  }
+}
+
+
+ body {
+  width: 100vw;
+  height: 100vh;
+ 
+  background-image: url('./digging-mining.jpg');
+  background-size: contain;
+  background-position: center;
+  -webkit-animation: slidein 5000s;
+  animation: slidein 5000s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+
+} 
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: center;
+    background-size: contain;
+  }
+
+  to {
+    background-position: -100000px 0px;
+    background-size: center;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: center;
+    background-size: contain;
+  }
+
+  to {
+    background-position: -100000px 0px;
+    background-size: center;
+  }
+
+}
+
+/* Scene */
+.scene {
+  background-image:
+
+  url('./BGd.jpg') !important;
+  height: 100%;
+  width: 100%;
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+  
+}
+
+
+.left {
+  background-image: url('./left.png');
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.right {
+  background-image: url('./left.png');
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.top {
+  background-image: url('./left.png');
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-position: center;
+
+}
+
+
+.floor {
+  background-image: url("https://t3.rbxcdn.com/1977bb7bbfc6b959cf6556daf6381793");
+  background-size: 50px;
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  bottom: 0;
+}
+
+.title {
+  width: 100vw;
+  height: 100vh;
+  background-color: #a1adff;
+  position: fixed;
+  z-index: 9;
+}
+
+/* HUD */
+
+h1,
+h2 {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  position: fixed;
+  top: 50px;
+  z-index: 99999;
+}
+
+/* a {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 200px;
+  background-color: #000;
+  padding: 10px 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  background: #fff;
+} */
+
+/* Mario */
+
+.mario {
+  background-image: url(./mario.png);
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 100px;
+  left: -114px;
+  position: fixed;
+  bottom: 80px;
+  transition: all 0.1s linear;
+  right: 0;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  
+.mario {
+  background-image: url(./mario.png);
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 100px;
+  left: -114px;
+  position: fixed;
+  bottom: 80px;
+  transition: all 0.1s linear;
+  right: 0;
+  margin: 0 auto;
+}
+  
+}
+
+/* Coin Box */
+
+.box {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 363px;
+  left: 35vw;
+  z-index: 1;
+}
+
+.box2 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 250px;
+  left: 33vw;
+  z-index: 1;
+}
+
+.box3 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 112px;
+  left: 34vw;
+  z-index: 1;
+}
+
+
+
+.box4 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 250px;
+  left: 82vw;
+  z-index: 1;
+}
+
+.box5 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 250px;
+  left: 65vw;
+  z-index: 1;
+}
+.box6 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 250px;
+  left: 49vw;
+  z-index: 1;
+}
+
+.box7 {
+  background-image: url(./mario.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 150px;
+  width: 50px;
+  bottom: 0px;
+  right: 0;
+  z-index: 1;
+}
+
+
+
+
+
+.box_animation {
+  -webkit-animation: animateBox 0.5s ease forwards;
+  animation: animateBox 0.5s ease forwards;
+}
+
+@-webkit-keyframes animateBox {
+  0% {
+    bottom: 250px;
+  }
+
+  50% {
+    bottom: 260px;
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes animateBox {
+  0% {
+    bottom: 250px;
+  }
+
+  50% {
+    bottom: 260px;
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+.star{
+  background-image: url(./6June__Layer-Comp-6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  bottom: 150px;
+  left: -25px;
+}
+.star2{
+  background-image: url(./6June__Layer-Comp-6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  bottom: 250px;
+  left: 55px;
+}
+.star3{
+  background-image: url(./6June__Layer-Comp-6.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+height: 50px;
+width: 50px;
+bottom: 350px;
+left: -32px;
+}
+
+.coin {
+  background-image: url(./6June__Layer-Comp-6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 389px;
+  left: 36vw;
+
+}
+
+.coin2 {
+  background-image: url(./6June__Layer-Comp-6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 279px;
+  left: 31vw;
+}
+
+.coin3 {
+  background-image: url(./6June__Layer-Comp-6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 40px;
+  width: 50px;
+  bottom: 149px;
+  left: 37vw;
+
+}
+
+.coin_animation {
+  -webkit-animation: animateCoin 0.5s ease forwards;
+  animation: animateCoin 0.5s ease forwards;
+}
+
+@-webkit-keyframes animateCoin {
+  0% {
+    bottom: 250px;
+  }
+
+  50% {
+    bottom: 350px;
+  }
+
+  100% {
+    bottom: 250px;
+
+  }
+}
+
+@keyframes animateCoin {
+  0% {
+    bottom: 250px;
+  }
+
+  50% {
+    bottom: 350px;
+  }
+
+  100% {
+    bottom: 250px;
+
+  }
+}
+
+/* Clouds */
+
+.cloud {
+ 
+  width: 100px;
+  height: 80px;
+  margin-top: 30px;
+  position: fixed;
+}
+
+/* .cloud1 {
+  background-image: url("./Mario_1_Cloud.png");
+  background-size: contain;
+  -webkit-animation: animateCloud 35s linear infinite;
+  animation: animateCloud 35s linear infinite;
+  transform: scale(0.75);
+}
+
+.cloud2 {
+  background-image: url("./Mario_2_Cloud.png");
+  background-size: contain;
+  -webkit-animation: animateCloud 20s linear infinite;
+  animation: animateCloud 20s linear infinite;
+  transform: scale(1);
+}
+
+.cloud3 {
+  background-image: url("./Mario_3_Cloud.png");
+  background-size: contain;
+  -webkit-animation: animateCloud 30s linear infinite;
+  animation: animateCloud 30s linear infinite;
+  transform: scale(1.25);
+}
+
+.cloud4 {
+  background-image: url("./Mario_4_Cloud.png");
+  background-size: contain;
+  -webkit-animation: animateCloud 18s linear infinite;
+  animation: animateCloud 18s linear infinite;
+  transform: scale(1.5);
+} */
+
+@-webkit-keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+
+
+/* button */
+.top {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 10px;
+  right: 40px;
+  transform: rotate(-90deg);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+
+  z-index: 100;
+}
+
+.left {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 10px;
+  left: 40px;
+  transform: rotate(-180deg);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+
+  z-index: 100;
+}
+
+.right {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 10px;
+  left: 120px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+
+  z-index: 100;
+}
+
+.float5 img {
+  background-position: center;
+  background-size: contain;
+  object-fit: contain;
+
+  width: 60px;
+  height: 60px;
+  z-index: 1 !important;
+}
+
+/* gift add */
+
+.steps {
+  display: flex;
+  position: absolute;
+  left: 0;
+
+}
+
+.steps img {
+  height: 30px;
+  object-fit: contain;
+
+
+}
+
+.one {
+  display: none;
+}
+
+.two {
+  display: none;
+}
+
+.three {
+  display: none;
+}
+
+.steps div {
+  height: 30px;
+  width: 40px;
+  border: 1px solid rgb(129, 129, 129);
+  background-color: #64606062;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* modal */
+
+    /* modal css */
+    .video-dialog .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-width: 1200px) {
+      .video-dialog {
+        width: 60% !important;
+      }
+    }
+
+    .video-dialog {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: table;
+      width: 100%;
+      margin: auto;
+      background: transparent;
+    }
+
+
+
+    .video-dialog .modal-content {
+      display: table-cell;
+      vertical-align: middle;
+      height: auto;
+      background: transparent !important;
+
+      border: none;
+      box-shadow: none;
+
+    }
+
+    .video-dialog .modal-content img {
+      width: 100%;
+      height: 300px;
+      background-position: center;
+      background-size: contain;
+      object-fit: contain;
+
+    }
+
+    .btn-lg {
+      z-index: 9999;
+    }
